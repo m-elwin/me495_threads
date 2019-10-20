@@ -4,10 +4,13 @@
     SUBSCRIBERS:
        sleep (std_msgs/Duration) - duration of sleep, in seconds 
 
-  Essentially, have one or more publishers publish on sleep at various rates.
-  The callback will print diagnostic information.
+  
+    A single subscriber that, upon receiving a message,
+    logs diagnostic information and sleeps for a specified duration.
 
-from std_msgs.msg import Int
+    By publishing different messages at different rates, the threading
+    model can be explored.
+    
 """
 
 import rospy
@@ -21,6 +24,6 @@ def sleeper(msg):
     rospy.loginfo("Woke up on Thread ID %s", threading.current_thread())
 
 if __name__  == "__main__":
-    rospy.init_node("sub")
+    rospy.init_node("sub_thread")
     rospy.Subscriber("sleep", Duration, sleeper)
     rospy.spin()
