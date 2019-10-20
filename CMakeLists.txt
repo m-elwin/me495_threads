@@ -12,8 +12,8 @@ catkin_package(
 )
 
 
-# install(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(PROGRAMS
+   nodes/threader
+   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
