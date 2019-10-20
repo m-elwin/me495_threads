@@ -13,7 +13,9 @@ catkin_package(
 
 
 install(PROGRAMS
-   nodes/threader
+   nodes/sub_thread
+   scripts/gil_io.py
+   scripts/gil_two_threads.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
