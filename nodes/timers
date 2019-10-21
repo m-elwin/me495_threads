@@ -10,9 +10,12 @@ def callback1(data):
 def callback2(data):
     rospy.loginfo("Callback 2: Thread Id %s", threading.current_thread())
 
-if __name__ == "__main__":
+def main():
    rospy.init_node("timers")
+   rospy.loginfo("Main Thread Id %s", threading.current_thread())
    rospy.Timer(rospy.Duration(1), callback1)
    rospy.Timer(rospy.Duration(5), callback2)
    rospy.spin()
-   
+
+if __name__ == "__main__":
+    main()  
