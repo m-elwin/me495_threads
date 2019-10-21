@@ -25,5 +25,6 @@ def sleeper(msg):
 
 if __name__  == "__main__":
     rospy.init_node("sub_thread")
+    rospy.loginfo("Main Thread: %s", threading.current_thread())
     rospy.Subscriber("sleep", Duration, sleeper)
     rospy.spin()
