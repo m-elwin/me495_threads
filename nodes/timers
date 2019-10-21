@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+""" Creates two timers, printing diagnostic information about their threads """
+
+import rospy
+import threading
+
+def callback1(data):
+    rospy.loginfo("Callback 1: Thread Id %s", threading.current_thread())
+
+def callback2(data):
+    rospy.loginfo("Callback 2: Thread Id %s", threading.current_thread())
+
+if __name__ == "__main__":
+   rospy.init_node("timers")
+   rospy.Timer(rospy.Duration(1), callback1)
+   rospy.Timer(rospy.Duration(5), callback2)
+   rospy.spin()
+   
