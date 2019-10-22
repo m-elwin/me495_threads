@@ -1,5 +1,11 @@
 #!/usr/bin/env python
-""" Outputs the time between starting and getting a service call """
+""" Outputs the time between starting and getting a service call 
+
+    SERVICES:
+     complete (std_srvs.Empty) - call this when your service is complete.
+      this node will then print out the elapsed time since it started.
+
+"""
 
 import rospy
 from std_srvs.srv import Empty, EmptyResponse

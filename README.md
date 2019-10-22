@@ -1,7 +1,8 @@
 # Overview
 Provides some code to help explore threads in python and ROS.
-You should examine the examples, run them, and right your own code to further your understand
-threads in python.
+You should examine the examples, run them, and write your own code to further your understand
+threads in python. At the end there are questions for you to turn in.  You can edit
+this file and the code provided directly to give your answers.
 
 # Provided code
 1. `scripts/gil_two_threads.py` - Non-ROS python script that
