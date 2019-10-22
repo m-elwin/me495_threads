@@ -15,24 +15,24 @@ import timeit
 from me495_threads import squares
 
 def one_thread_square():
-    """ Computes the square of each integer from 0 to 100000
+    """ Computes the square of each integer from 0 to 10000000
         Uses a single thread. 
 
         Prints the time it took to execute
     """
     start = timeit.default_timer()
-    squares(0, 100001) # The max range is not inclusive
+    squares(0, 10000001) # The max range is not inclusive
     end = timeit.default_timer()
     print("One Thread Time: ", end - start)
 
 def two_thread_square():
-    """ Computes the square of each integer from 0 to 100000, using two threads
+    """ Computes the square of each integer from 0 to 1000000, using two threads
     
         Prints the time it took to execute, excluding the time to setup the threads
     """
     # create the threads, each to handle half the lists
-    thread1 = threading.Thread(target = squares, args = (0, 50000))
-    thread2 = threading.Thread(target = squares, args = (50000, 100001))
+    thread1 = threading.Thread(target = squares, args = (0, 5000000))
+    thread2 = threading.Thread(target = squares, args = (5000000, 10000001))
     
     start = timeit.default_timer()
     # start the threads

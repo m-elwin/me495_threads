@@ -1,7 +1,7 @@
 <launch>
-  <node name="node_square1" pkg="me495_threads" type="node_square" args="--min 0 --max 50000" output="screen"/>
+  <node name="node_square1" pkg="me495_threads" type="node_square" args="--min 0 --max 5000000" output="screen"/>
 
-  <node name="node_square2" pkg="me495_threads" type="node_square" args="--min 50001 --max 100001" output="screen"/>
+  <node name="node_square2" pkg="me495_threads" type="node_square" args="--min 5000001 --max 10000001" output="screen"/>
 
   <node name="time_square" pkg="me495_threads" type="time_square" output="screen"/>
 </launch>
