@@ -12,24 +12,7 @@
 from __future__ import print_function
 import threading
 import timeit
-
-def squares(a, b):
-    """ Compute the square of each integer from a to b
-
-        Args:
-            a (int) - the lowest number in the range (inclusive)
-            b (int) - the highest number in the range (exclusive)
-
-            Note: a < b
-
-       Returns:
-         The squares of the integers from 0 to 1000
-    """
-    nums = range(a, b)
-    squares = []
-    for n in nums:
-        squares.append(n**2)
-    return squares
+from me495_threads import squares
 
 def one_thread_square():
     """ Computes the square of each integer from 0 to 100000

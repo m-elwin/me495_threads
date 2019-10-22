@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+""" Outputs the time between starting and getting a service call """
+
+import rospy
+from std_srvs.srv import Empty, EmptyResponse
+import timeit
+
+class CompleteTime(object):
+      def __init__(self):
+          rospy.init_node("time_square")
+
+          # although setting time before creating service is less accurate,
+          # it ensures that this variable is defined before the service
+          # is ever called so it can be used in the callback
+          self.start = timeit.default_timer()
+          complete = rospy.Service("complete", Empty, self.callback)
+
+      def callback(self, data):
+            now = timeit.default_timer()
+            rospy.loginfo("Elapsed %s", str(now - self.start))
+            return EmptyResponse()
+
+if __name__ == "__main__":
+   CompleteTime()
+   rospy.spin()
+   
