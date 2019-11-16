@@ -49,7 +49,7 @@ You will likely need to read through the provided code and understand what it do
    1 Hz.  The node should count how many messages it publishes and print out an updated count after every time it publishes.
    - Describe the behavior that you see when the delay time sent by `pub_thread` is shorter than 1 second
    - What happens when you increase the delay time sent by `pub_thread` to 2 seconds?
-     - Does one subscriber callback complete before the next one is started?
+     - Does one subscriber callback complete before the next subscriber callback is started?
      - After waiting for a few seconds, kill `pub_thread` but keep `sub_thread` running.  What happens with `sub_thread`?
 10. Run two instances of the `pub_thread` node.  What is the relationship between subscriber threads
     and publishers?
