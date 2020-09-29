@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.8)
 project(me495_threads)
 
 find_package(catkin REQUIRED COMPONENTS message_generation std_msgs)
@@ -14,9 +14,13 @@ catkin_package(
 )
 
 
-install(PROGRAMS
-   nodes/sub_thread
-   scripts/gil_two_threads.py
+catkin_install_python(PROGRAMS
+  nodes/sub_thread
+  nodes/node_square
+  nodes/timers
+  nodes/time_square
+  scripts/gil_two_threads.py
+  scripts/race_cond.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

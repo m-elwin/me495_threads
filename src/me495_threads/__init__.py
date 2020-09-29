@@ -1,1 +1,1 @@
-from squareit import *
+from .squareit import *
