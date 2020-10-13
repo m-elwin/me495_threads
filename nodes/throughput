@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+"""Publish a message at a given frequency and a given size with
+a given publish queue size
+
+Publishes:
+   data (me495_threads.IntArray) - an array of integers. Dummy data for testing
+
+Parameters:
+   ~freq (int) - the publishing frequency 
+   ~msgsize (int) - number of int32 values in the message
+   ~qsize (int) - length of the publishing queue
+   ~msgnum (int) - the number of messages to publish or -1 to publish indefinitely
+"""
+import rospy
+from me495_threads.msg import TestIntArray
+
+def main():
+    rospy.init_node("pub_test")
+    freq = rospy.get_param("~freq", 1)
+    msgsize = rospy.get_param("~msgsize", 1)
+    qsize = rospy.get_param("~qsize", 1)
+    msgnum = rospy.get_param("~msgnum", -1)
+    rospy.loginfo(f'freq: {freq} msgsize: {msgsize} qsize: {qsize} msgnum {msgnum}')
+    pub = rospy.Publisher("data", TestIntArray, queue_size = qsize)
+    
+    i = 0
+    mymsg = TestIntArray(value = list(range(msgsize)))
+    rate = rospy.Rate(freq)
+    while not rospy.is_shutdown() and (msgnum == -1 or i < msgnum):
+        pub.publish(mymsg)
+        rate.sleep()
+    
+
+
+if __name__ == "__main__":
+    main()

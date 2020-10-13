@@ -6,10 +6,19 @@ find_package(catkin REQUIRED COMPONENTS message_generation std_msgs)
 
 catkin_python_setup()
 
+add_message_files(
+  FILES
+  TestIntArray.msg
+)
+  
+generate_messages(
+   DEPENDENCIES
+)
+
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES me495_threads
-  CATKIN_DEPENDS std_msgs
+  CATKIN_DEPENDS std_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -19,6 +28,7 @@ catkin_install_python(PROGRAMS
   nodes/node_square
   nodes/timers
   nodes/time_square
+  nodes/pub_test
   scripts/gil_two_threads.py
   scripts/race_cond.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

@@ -1,5 +1,5 @@
 # Overview
-Provides some code to help explore threads in python and ROS.
+Provides some code to help explore threads and timing in python and ROS.
 You should examine the examples, run them, and write your own code to further your understand
 threads in python. At the end there are questions for you to turn in.  You can edit
 this file and the code provided directly to give your answers.
@@ -14,6 +14,7 @@ this file and the code provided directly to give your answers.
    Also prints diagnostic information.  In conjunction with publishers that publish
    at different rates, you can begin to explore the nuances of subscriber threads.
 6. `nodes/timers` - Starts two timers and prints diagnostic information
+7. `nodes/throughput` - Publishes messages with different queue_lengths sizes, and at different frequencies.
 
 # Questions
 Use the provided code, code you write, and standard ROS tools to answer the following questions.
