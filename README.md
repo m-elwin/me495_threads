@@ -16,13 +16,8 @@ this file and the code provided directly to give your answers.
 6. `nodes/timers` - Starts two timers and prints diagnostic information
 7. `nodes/throughput` - Publishes messages with different queue_lengths sizes, and at different frequencies.
 
-# Questions
+# Exercises
 Use the provided code, code you write, and standard ROS tools to answer the following questions.
-You can directly edit this document to answer the questions and then push to your assignment.
-If you wrote any new code, indicate the files that you created in your answer.
-If you ran some commands, record those, being sure to backticks to format 
-the commands as source code.  As usual, you should spread out your answers across multiple git commits.
-You will likely need to read through the provided code and understand what it does to answer the questions.
 
 1. Run `scripts/gil_two_threads.py` several times. How long did the single and multi-threaded computations take (use the best times among all trials)?
    Is the computation that uses two threads roughly twice as fast as the version that uses a single thread? Why or why not?
