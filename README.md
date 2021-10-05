@@ -27,7 +27,7 @@ Use the provided code, code you write, and standard ROS tools to answer the foll
    - Under what circumstances would this code outperform `scripts/gil_two_threads.py` and when would it underperform?
      (Hint, think about factors such as number of CPU cores available and setup overhead).
 3. Run `scripts/race_cond.py` a few times.  Notice that it does not return consistent results.
-   Your task is to use a a mutex (called a [Lock](https://docs.python.org/2/library/threading.html#lock-objects) in python) to
+   Your task is to use a a mutex (called a [Lock](https://docs.python.org/3/library/threading.html#lock-objects) in python) to
    fix the race condition in `scripts/race_cond.py`. The variable `total` should count precisely the
    total number of iterations of the loop in both threads, every time you run the code.
    - You can use `with lock:` to automatically acquire a lock at the beginning of the block
