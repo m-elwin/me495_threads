@@ -15,7 +15,7 @@ this file and the code provided directly to give your answers.
    at different rates, you can begin to explore the nuances of subscriber threads.
 6. `nodes/timers` - Starts two timers and prints diagnostic information
 7. `nodes/throughput` - Publishes messages with different queue_lengths sizes, and at different frequencies.
-
+8. `nodes/suborder` - Subscribes, then initializes a variable.   See what happens if something is already publishing...
 # Exercises
 Use the provided code, code you write, and standard ROS tools to answer the following questions.
 
