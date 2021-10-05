@@ -13,11 +13,14 @@ def callback(niters):
         total += 1
 
 if __name__ == "__main__":
-    num_iters = 1000
+    num_iters = 500000
     t1 = threading.Thread(target = callback, args = (num_iters,))
     t2 = threading.Thread(target = callback, args = (num_iters,))
+    t3 = threading.Thread(target = callback, args = (num_iters,))
     t1.start()
     t2.start()
+    t3.start()
     t1.join()
     t2.join()
+    t3.join()
     print("Each thread did", num_iters, "iterations. Total is", total)
