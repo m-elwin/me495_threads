@@ -4,7 +4,7 @@
 from __future__ import print_function
 import threading
 
-total = 0
+
 
 def callback(niters):
     global total
@@ -14,6 +14,7 @@ def callback(niters):
 
 if __name__ == "__main__":
     num_iters = 500000
+    total = 0
     t1 = threading.Thread(target = callback, args = (num_iters,))
     t2 = threading.Thread(target = callback, args = (num_iters,))
     t3 = threading.Thread(target = callback, args = (num_iters,))
