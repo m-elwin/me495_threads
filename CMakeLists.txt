@@ -29,6 +29,7 @@ catkin_install_python(PROGRAMS
   nodes/timers
   nodes/time_square
   nodes/throughput
+  nodes/suborder
   scripts/gil_two_threads.py
   scripts/race_cond.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

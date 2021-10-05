@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+"""
+    Used to demonstrate the perils of initialization order in ROS
+
+Subscribes:
+    /myint (std_msgs/Int32) - Adds the received value to an accumulator
+"""
+
+import rospy
+from std_msgs.msg import Int32
+
+def callback(msg):
+   global accumulator
+   accumulator += msg.data
+   rospy.loginfo(f"msg: {msg.data} accum: {accumulator}")
+
+if __name__ == "__main__":
+   rospy.init_node("subscription_order")
+   rospy.Subscriber("myint", Int32, callback)
+
+   # This delay is here to simulate other setup occuring
+   rospy.sleep(1)
+   accumulator = 0
+   rospy.loginfo("Initialized the Accumulator")
+   rospy.spin()
